@@ -29,8 +29,6 @@ def ArticleSearch(keywords='',
 				sort='publish_date,desc',
 				total='0',
 				hearst_api_key=''):
-	if limit == '':
-		limit = 10;
 	call_type = 'Article'
 	url = '/' + call_type + '/search?_pretty=1&shape=brief&start=0&limit=' + str(limit) + '&sort=publish_date%2Cdesc&total=0&api_key='+hearst_api_key
 	if keywords != '':
