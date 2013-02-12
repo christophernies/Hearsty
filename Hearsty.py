@@ -7,9 +7,28 @@ except ImportError:
 
 ####SETTINGS####
 http = httplib2.Http()
+hearst_api_key = '1231'
+hearst_url_base = 'http://hearst.api.mashery.com'
 
-def ArticleSearch(keywords, limit, hearst_api_key):
-	# http://hearst.api.mashery.com/Article/search?_pretty=1&shape=brief&start=0&limit=10&sort=publish_date%2Cdesc&total=0&api_key=
+def ArticleSearch(keywords='', 
+				_callback='', 
+				_pretty='1',
+				shape='full',
+				pages='full',
+				id='',
+				site_id='',
+				article_section_id='',
+				article_category_id='',
+				ad_category_id='',
+				article_type_id='',
+				publish_date_begin='',
+				url_name='',
+				title='',
+				start='0',
+				limit='10',
+				sort='publish_date,desc',
+				total='0',
+				hearst_api_key=''):
 	if limit == '':
 		limit = 10;
 	call_type = 'Article'
