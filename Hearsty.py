@@ -8,13 +8,6 @@ except ImportError:
 ####SETTINGS####
 http = httplib2.Http()
 
-def postToCloudmine():
-	data = "{\"data\":\"21\"}";
-	url = '/' + cloudmine_app + '/text'
-	headers = {'Content-type': 'application/json', 'X-CloudMine-ApiKey':cloudmine_api_key}
-	response, content = http.request(cloudmine_url_base+url, 'POST', headers=headers, body=data)
-	return content
-
 def ArticleSearch(keywords, limit, hearst_api_key):
 	# http://hearst.api.mashery.com/Article/search?_pretty=1&shape=brief&start=0&limit=10&sort=publish_date%2Cdesc&total=0&api_key=
 	if limit == '':
